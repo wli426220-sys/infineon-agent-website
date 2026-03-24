@@ -24,6 +24,7 @@
 | **测试** | Playwright (截图测试、功能测试) |
 | **图形** | SVG (图标、Logo、背景) |
 | **数据** | JSON 数据驱动页面生成 |
+| **部署** | EdgeOne Pages / GitHub Actions |
 
 ---
 
@@ -35,6 +36,7 @@ C:\Users\lenovo\Desktop\web20260323\
 ├── style.css                  # 全局样式入口
 ├── script.js                  # 全局脚本
 ├── sitemap.xml                # 网站地图
+├── edgeone.json               # EdgeOne 部署配置
 ├── PRD.md                     # 产品需求文档
 ├── DESIGN.md                  # 详细设计文档
 ├── PLAN.md                    # 开发计划
@@ -47,7 +49,7 @@ C:\Users\lenovo\Desktop\web20260323\
 │   │   ├── layout.css         # 布局样式
 │   │   └── responsive.css     # 响应式样式
 │   ├── images/                # 图片资源
-│   └── svg/                   # SVG 资源
+│   └── svg/
 │       ├── icons/             # 图标
 │       ├── products/          # 产品图
 │       └── backgrounds/       # 背景图
@@ -63,7 +65,8 @@ C:\Users\lenovo\Desktop\web20260323\
 │   ├── igbt/                  # IGBT 分类
 │   ├── mosfet/                # MOSFET 分类
 │   ├── mcu/                   # MCU 分类
-│   └── ...
+│   ├── diode/                 # 二极管分类
+│   └── sensor/                # 传感器分类
 ├── solutions/                 # 解决方案
 ├── support/                   # 技术支持
 ├── news/                      # 新闻中心
@@ -92,7 +95,7 @@ C:\Users\lenovo\Desktop\web20260323\
 ### 2. 产品中心
 - **产品分类页**: 展示所有产品分类卡片，含 200-300 字描述
 - **二级分类页**: 动态参数表格，URL 参数筛选，侧边栏导航
-- **产品详情页**: 双栏 Hero 区域、Tab 选项卡、规格参数表格、配套料号推荐、Product Schema
+- **产品详情页**: 双栏 Hero 区域，Tab 选项卡、规格参数表格、配套料号推荐、Product Schema
 
 ### 3. 解决方案
 - **列表页**: 行业解决方案卡片，含摘要和关键词
@@ -193,6 +196,12 @@ python -m http.server 8080
 
 访问 http://localhost:8080/
 
+### 部署
+项目已配置 GitHub Actions 自动部署到 EdgeOne Pages：
+1. 推送代码到 GitHub 仓库
+2. GitHub Actions 自动触发部署
+3. 部署成功后访问 EdgeOne 提供的域名
+
 ---
 
 ## 开发流程
@@ -258,6 +267,12 @@ python -m http.server 8080
 }
 ```
 
+### EdgeOne 部署配置 (edgeone.json)
+- 输出目录：`.` (项目根目录)
+- 索引文件：`index.html`
+- 缓存规则：静态资源 1 年，HTML 24 小时
+- SSL：已启用
+
 ---
 
 ## 验收标准
@@ -316,6 +331,8 @@ python -m http.server 8080
 | `DESIGN.md` | 详细设计文档 - 色彩、字体、组件规范、布局系统 |
 | `PLAN.md` | 开发计划 - 10 个阶段 62 个任务的详细计划 |
 | `TODO.md` | TODO 清单 - 集成技能调用的任务清单 |
+| `DEPLOY_COMPLETE.md` | 部署完成指南 - EdgeOne 部署步骤 |
+| `CHECK_REPORT.md` | 审查测试报告 - 单元模块审查状态 |
 
 ---
 
@@ -324,3 +341,26 @@ python -m http.server 8080
 | 版本 | 日期 | 说明 |
 |------|------|------|
 | v1.0 | 2026-03-24 | 初始版本，基于现有项目结构生成 |
+
+---
+
+## 当前项目状态
+
+### 已完成
+- ✅ 项目目录结构已创建
+- ✅ 基础 HTML/CSS/JS 文件已建立
+- ✅ JSON 数据文件已准备 (infineon 品牌)
+- ✅ 页面生成脚本已编写
+- ✅ EdgeOne 部署配置已完成
+- ✅ GitHub Actions 自动部署已配置
+
+### 待完成
+- ⏳ 完整页面模板开发 (13 个模板)
+- ⏳ 组件样式开发 (22 个组件)
+- ⏳ SVG 资源生成
+- ⏳ 完整 JSON 数据填充
+- ⏳ 集成测试与验证
+
+### 当前分支
+- 主分支：`main`
+- 开发分支：`feature/infineon-website` (待创建)

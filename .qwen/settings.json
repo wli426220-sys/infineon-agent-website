@@ -11,7 +11,9 @@
       "Bash(git pull *)",
       "Bash(git checkout *)",
       "Bash(curl *)",
-      "Bash(jq *)"
+      "Bash(jq *)",
+      "mcp__edgeone-pages__deploy_html"
     ]
-  }
+  },
+  "$version": 3
 }
