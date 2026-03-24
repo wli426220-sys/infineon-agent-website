@@ -1,0 +1,10 @@
+# 忽略文件
+*.log
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+*.bak
+*.orig

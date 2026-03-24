@@ -1,0 +1,20 @@
+/* assets/css/responsive.css - 响应式样式 */
+@import './variables.css';
+@media (min-width: 1200px) { .container { max-width: var(--container-max); } }
+@media (max-width: 1199px) { .grid-4, .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 767px) {
+  .navbar-nav { display: none; }
+  .mobile-menu-toggle { display: flex; }
+  .hero { min-height: 400px; padding: var(--space-10) var(--space-4); }
+  .hero-title { font-size: var(--text-2xl); }
+  .grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .content-sidebar, .two-columns, .product-detail-hero { grid-template-columns: 1fr; }
+  .sidebar { position: static; width: 100%; margin-top: var(--space-6); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .floating-sidebar { bottom: 0; top: auto; flex-direction: row; }
+}
+@media (max-width: 575px) {
+  .container { padding: 0 var(--space-4); }
+  .hero-title { font-size: var(--text-xl); }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
