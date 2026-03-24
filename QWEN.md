@@ -84,7 +84,7 @@ C:\Users\lenovo\Desktop\web20260323\
 ### 1. 首页 (index.html)
 - Hero Banner - 静态背景 + 宣传文案
 - 核心优势 - 4 个优势卡片（库存深度、技术支持、物流能力、价格优势）
-- 产品中心入口 - 产品分类卡片
+- 产品分类入口 - 产品分类卡片
 - 解决方案展示 - 行业解决方案预览
 - 最新动态 - 新闻/技术文章预览
 - 底部 CTA - 行动号召区域
@@ -150,7 +150,7 @@ C:\Users\lenovo\Desktop\web20260323\
 <!-- 首页 -->
 <title>英飞凌代理 | 提供正品原装现货 | 力通</title>
 <meta name="description" content="力通是英飞凌代理，长期稳定供应提供正品原装现货。并提供技术支持和优势价格，欢迎咨询。">
-<meta name="keywords" content="英飞凌代理，电子元件现货，英飞凌 IGBT,英飞凌 MOSFET">
+<meta name="keywords" content="英飞凌代理，电子元件现货，英飞凌 IGBT，英飞凌 MOSFET">
 ```
 
 ### 结构化数据 (Schema.org)
@@ -176,9 +176,6 @@ C:\Users\lenovo\Desktop\web20260323\
 ```bash
 # 生成英飞凌品牌页面
 node scripts/generate-pages.js infineon
-
-# 生成其他品牌页面
-node scripts/generate-pages.js semikron
 ```
 
 ### 生成网站地图
@@ -193,6 +190,8 @@ npx http-server -p 8080
 # 或使用 Python
 python -m http.server 8080
 ```
+
+访问 http://localhost:8080/
 
 ---
 
@@ -290,6 +289,17 @@ python -m http.server 8080
 
 ---
 
+## 注意事项
+
+1. **不要放 404 或空链接** - 对 SEO 优化不好
+2. **每个品牌内容差异化** - 避免 SEO 排名降权
+3. **详情页侧边栏** - 显示相关详情页链接
+4. **列表页和详情页 Title** - 必须独特、包含关键词
+5. **审查测试** - 每个单元模块完成后立即审查测试
+6. **连贯开发模式** - 按顺序执行，不跳跃、不遗漏
+
+---
+
 ## 联系方式
 
 - **QQ**: 1145711755
@@ -306,17 +316,6 @@ python -m http.server 8080
 | `DESIGN.md` | 详细设计文档 - 色彩、字体、组件规范、布局系统 |
 | `PLAN.md` | 开发计划 - 10 个阶段 62 个任务的详细计划 |
 | `TODO.md` | TODO 清单 - 集成技能调用的任务清单 |
-
----
-
-## 注意事项
-
-1. **不要放 404 或空链接** - 对 SEO 优化不好
-2. **每个品牌内容差异化** - 避免 SEO 排名降权
-3. **详情页侧边栏** - 显示相关详情页链接
-4. **列表页和详情页 Title** - 必须独特、包含关键词
-5. **审查测试** - 每个单元模块完成后立即审查测试
-6. **连贯开发模式** - 按顺序执行，不跳跃、不遗漏
 
 ---
 

@@ -1,0 +1,75 @@
+{
+  "name": "infineon-agent-website",
+  "domain": "www.infineon-elec.com",
+  "description": "英飞凌代理网站 - 完整产品展示和技术支持平台",
+  "build": {
+    "command": "",
+    "output": ".",
+    "index": "index.html"
+  },
+  "deploy": {
+    "provider": "edgeone",
+    "region": "mainland-china",
+    "cache": {
+      "enabled": true,
+      "rules": [
+        {
+          "pattern": "**/*.{css,js,svg,png,jpg,jpeg,gif,webp}",
+          "maxAge": 31536000,
+          "browserTTL": 31536000
+        },
+        {
+          "pattern": "**/*.html",
+          "maxAge": 3600,
+          "browserTTL": 86400
+        }
+      ]
+    },
+    "redirects": [
+      {
+        "source": "/products/igbt",
+        "destination": "/products/igbt/",
+        "type": 301
+      },
+      {
+        "source": "/products/mosfet",
+        "destination": "/products/mosfet/",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
+          }
+        ]
+      }
+    ]
+  },
+  "dns": {
+    "records": [
+      {
+        "type": "CNAME",
+        "name": "www",
+        "content": "edgeone.app",
+        "proxied": true
+      }
+    ]
+  },
+  "ssl": {
+    "enabled": true,
+    "type": "universal",
+    "minVersion": "1.2"
+  }
+}

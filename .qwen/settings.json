@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir *)",
+      "Bash(edgeone *)",
+      "Bash(npm install *)",
+      "mcp__edgeone-pages__deploy_folder_or_zip",
+      "Bash(git add *)"
+    ]
+  }
+}

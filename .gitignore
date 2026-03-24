@@ -14,3 +14,11 @@ Thumbs.db
 # 临时文件
 *.bak
 *.orig
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# EdgeOne
+.edgeone/
