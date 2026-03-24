@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="如何选择适合的 IGBT 型号 - 从电压等级、电流等级、开关频率、封装形式等方面详细介绍 IGBT 选型方法">
+  <meta name="keywords" content="IGBT 选型，功率器件，英飞凌">
+  <title>如何选择适合的 IGBT 型号 | 选型指南 | 力通电子</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "如何选择适合的 IGBT 型号",
+    "description": "从电压等级、电流等级、开关频率、封装形式等方面详细介绍 IGBT 选型方法",
+    "datePublished": "2026-03-20",
+    "author": {
+      "@type": "Person",
+      "name": "张工",
+      "jobTitle": "高级 FAE 工程师"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="navbar-brand">
+          <svg class="navbar-logo" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="50" height="50" rx="10" fill="#0072CE"/>
+            <path d="M15 25 L25 15 L35 25 L25 35 Z" fill="white"/>
+            <circle cx="25" cy="25" r="4" fill="#FF6B00"/>
+          </svg>
+          <div>
+            <span style="font-weight: 600; color: #333;">力通电子</span>
+          </div>
+        </a>
+        <ul class="navbar-nav">
+          <li><a href="/" class="nav-link">首页</a></li>
+          <li><a href="/products/" class="nav-link">产品中心</a></li>
+          <li><a href="/solutions/" class="nav-link">解决方案</a></li>
+          <li><a href="/support/" class="nav-link active">技术支持</a></li>
+          <li><a href="/news/industry/" class="nav-link">新闻</a></li>
+          <li><a href="/about/" class="nav-link">关于我们</a></li>
+          <li><a href="/about/contact.html" class="nav-link">联系我们</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="菜单">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="content-sidebar">
+          <!-- 主内容区 -->
+          <article class="main">
+            <!-- 作者信息栏 -->
+            <div class="author-box">
+              <div class="author-avatar">张</div>
+              <div class="author-info">
+                <div class="author-name">张工</div>
+                <div class="author-title">高级 FAE 工程师 · 10 年功率半导体应用经验</div>
+                <div class="author-bio">专注于工业驱动和新能源领域，服务客户 500+</div>
+                <div class="author-meta">
+                  <span>📅 2026-03-20</span>
+                  <span>⏱️ 阅读 (8 分钟)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 文章内容 -->
+            <div class="article-content">
+              <p style="font-size: 18px; line-height: 1.8; color: #666; border-left: 4px solid #0072CE; padding-left: 24px; margin-bottom: 32px;">
+                选择合适的 IGBT 型号是设计高效功率转换系统的关键。本文将从电压等级、电流等级、开关频率、封装形式等方面详细介绍 IGBT 选型方法。
+              </p>
+
+              <h2>一、确定电压等级</h2>
+              <p>首先根据应用的母线电压确定 IGBT 的耐压等级。一般规则是：</p>
+              <ul style="line-height: 2.2;">
+                <li>400V 系统 → 选择 600V/650V IGBT</li>
+                <li>690V 系统 → 选择 1200V IGBT</li>
+                <li>1140V 系统 → 选择 1700V IGBT</li>
+              </ul>
+              <p>考虑电压裕量，通常选择额定电压为最大工作电压的 1.5-2 倍。</p>
+
+              <h2>二、确定电流等级</h2>
+              <p>根据负载电流和过载要求确定 IGBT 的电流等级。需要考虑：</p>
+              <ul style="line-height: 2.2;">
+                <li>连续工作电流</li>
+                <li>峰值电流</li>
+                <li>散热条件</li>
+              </ul>
+              <p>一般建议选择额定电流为最大工作电流的 1.5-2 倍。</p>
+
+              <h2>三、考虑开关频率</h2>
+              <p>不同应用对开关频率的要求不同：</p>
+              <ul style="line-height: 2.2;">
+                <li>工业变频：2-20kHz</li>
+                <li>伺服驱动：10-50kHz</li>
+                <li>太阳能逆变：10-100kHz</li>
+              </ul>
+              <p>高频应用应选择开关损耗低的型号，如 IGBT7 系列。</p>
+
+              <h2>四、选择封装形式</h2>
+              <p>根据功率等级和散热要求选择封装：</p>
+              <ul style="line-height: 2.2;">
+                <li>小功率（&lt;10kW）：TO-247、TO-220 等分立封装</li>
+                <li>中功率（10-100kW）：EconoDUAL™ 3、EasyPACK™ 等模块</li>
+                <li>大功率（&gt;100kW）：PrimePACK™、IHV 等大功率模块</li>
+              </ul>
+
+              <h2>五、其他考虑因素</h2>
+              <ul style="line-height: 2.2;">
+                <li>是否需要短路保护功能</li>
+                <li>工作温度范围要求</li>
+                <li>是否需要集成续流二极管</li>
+                <li>成本预算</li>
+              </ul>
+
+              <h2>六、选型实例</h2>
+              <div style="background: #f8f9fa; padding: 24px; border-radius: 8px; margin: 24px 0;">
+                <h3 style="margin-top: 0;">应用：50kW 工业变频器，690V 电网</h3>
+                <h4>选型过程：</h4>
+                <ol style="line-height: 2.2;">
+                  <li>电压等级：690V × 1.5 = 1035V → 选择 1200V IGBT</li>
+                  <li>电流等级：50kW / (√3 × 690V × 0.85) ≈ 49A，考虑 2 倍裕量 → 选择 100A 以上</li>
+                  <li>开关频率：10kHz → 选择标准 IGBT4 或 IGBT7</li>
+                  <li>封装：50kW 功率等级 → EconoDUAL™ 3 封装</li>
+                </ol>
+                <h4>推荐型号：</h4>
+                <p><strong>FF100R12ME4</strong> 或 <strong>FF150R12ME4</strong></p>
+                <p><a href="/products/igbt/FF300R12ME4.html" style="color: #0072CE;">查看 IGBT 产品列表 →</a></p>
+              </div>
+
+              <h2>相关文章</h2>
+              <ul style="color: #666;">
+                <li><a href="/support/notes/igbt-application-notes.html" style="color: #0072CE;">IGBT 驱动电路设计要点</a></li>
+                <li><a href="/support/troubleshooting/igbt-failure-analysis.html" style="color: #0072CE;">IGBT 失效分析与排查</a></li>
+              </ul>
+
+              <!-- 分销商 CTA -->
+              <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, #0072CE 0%, #005A9E 100%); border-radius: 12px; text-align: center; color: white;">
+                <h3 style="color: white; margin-bottom: 16px;">需要选型帮助？</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 24px;">
+                  联系我们的 FAE 工程师，获取专业的选型建议和技术支持
+                </p>
+                <a href="/about/contact.html" class="btn btn-cta" style="background: #FF6B00; border: none;">联系技术支持</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 侧边栏 -->
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">文章目录</h4>
+              <ul class="sidebar-nav toc-list">
+                <li><a href="#" class="toc-link sidebar-link">一、确定电压等级</a></li>
+                <li><a href="#" class="toc-link sidebar-link">二、确定电流等级</a></li>
+                <li><a href="#" class="toc-link sidebar-link">三、考虑开关频率</a></li>
+                <li><a href="#" class="toc-link sidebar-link">四、选择封装形式</a></li>
+                <li><a href="#" class="toc-link sidebar-link">五、其他考虑因素</a></li>
+                <li><a href="#" class="toc-link sidebar-link">六、选型实例</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">相关 PDF 下载</h4>
+              <ul class="sidebar-nav">
+                <li><a href="#" class="sidebar-link">📄 IGBT 选型指南 (PDF)</a></li>
+                <li><a href="#" class="sidebar-link">📄 产品选型手册 (PDF)</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">向工程师提问</h4>
+              <p style="font-size: 14px; color: #666; margin-bottom: 12px;">有技术问题？我们的 FAE 团队为您解答</p>
+              <a href="/about/contact.html" class="btn btn-primary" style="width: 100%;">联系技术支持</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-bottom">
+          <span>© 2026 力通电子 版权所有</span>
+          <span>QQ: 1145711755</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

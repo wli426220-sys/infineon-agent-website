@@ -1,0 +1,77 @@
+{
+  "brand": "infineon",
+  "categories": {
+    "guides": {
+      "name": "选型指南",
+      "articles": [
+        {
+          "id": "how-to-select-igbt",
+          "title": "如何选择适合的 IGBT 型号",
+          "author": "张工",
+          "authorTitle": "高级 FAE 工程师",
+          "authorBio": "10 年功率半导体应用经验，专注于工业驱动和新能源领域",
+          "date": "2026-03-20",
+          "tags": ["IGBT", "选型", "功率器件"],
+          "content": "选择合适的 IGBT 型号是设计高效功率转换系统的关键。本文将从电压等级、电流等级、开关频率、封装形式等方面详细介绍 IGBT 选型方法。\n\n## 一、确定电压等级\n\n首先根据应用的母线电压确定 IGBT 的耐压等级。一般规则是：\n- 400V 系统 → 选择 600V/650V IGBT\n- 690V 系统 → 选择 1200V IGBT\n- 1140V 系统 → 选择 1700V IGBT\n\n考虑电压裕量，通常选择额定电压为最大工作电压的 1.5-2 倍。\n\n## 二、确定电流等级\n\n根据负载电流和过载要求确定 IGBT 的电流等级。需要考虑：\n- 连续工作电流\n- 峰值电流\n- 散热条件\n\n一般建议选择额定电流为最大工作电流的 1.5-2 倍。\n\n## 三、考虑开关频率\n\n不同应用对开关频率的要求不同：\n- 工业变频：2-20kHz\n- 伺服驱动：10-50kHz\n- 太阳能逆变：10-100kHz\n\n高频应用应选择开关损耗低的型号，如 IGBT7 系列。\n\n## 四、选择封装形式\n\n根据功率等级和散热要求选择封装：\n- 小功率（<10kW）：TO-247、TO-220 等分立封装\n- 中功率（10-100kW）：EconoDUAL™ 3、EasyPACK™ 等模块\n- 大功率（>100kW）：PrimePACK™、IHV 等大功率模块\n\n## 五、其他考虑因素\n\n- 是否需要短路保护功能\n- 工作温度范围要求\n- 是否需要集成续流二极管\n- 成本预算\n\n## 六、选型实例\n\n**应用**：50kW 工业变频器，690V 电网\n\n**选型过程**：\n1. 电压等级：690V × 1.5 = 1035V → 选择 1200V IGBT\n2. 电流等级：50kW / (√3 × 690V × 0.85) ≈ 49A，考虑 2 倍裕量 → 选择 100A 以上\n3. 开关频率：10kHz → 选择标准 IGBT4 或 IGBT7\n4. 封装：50kW 功率等级 → EconoDUAL™ 3 封装\n\n**推荐型号**：FF100R12ME4 或 FF150R12ME4",
+          "relatedArticles": ["igbt-application-notes", "igbt-troubleshooting"]
+        },
+        {
+          "id": "how-to-select-mcu",
+          "title": "如何选择适合的英飞凌 MCU",
+          "author": "李工",
+          "authorTitle": "MCU 应用专家",
+          "authorBio": "8 年嵌入式系统开发经验，熟悉 AURIX™、XMC™系列 MCU",
+          "date": "2026-03-18",
+          "tags": ["MCU", "AURIX", "XMC", "选型"],
+          "content": "英飞凌提供 AURIX™和 XMC™两大系列 32 位微控制器，本文介绍如何根据应用需求选择合适的 MCU 型号。\n\n## 一、AURIX™ vs XMC™ 系列选择\n\n**AURIX™系列**：\n- 三核 TriCore™架构\n- 功能安全等级 ASIL-D\n- 适用于汽车动力总成、ADAS、工业安全应用\n\n**XMC™系列**：\n- ARM® Cortex®-M 内核\n- 高性价比\n- 适用于工业控制、电机驱动、数字电源\n\n## 二、确定性能需求\n\n- CPU 频率：从 24MHz 到 300MHz\n- Flash 容量：从 32KB 到 16MB\n- RAM 容量：从 8KB 到 2MB\n\n## 三、外设需求\n\n- ADC 通道数和精度\n- PWM 通道数\n- 通信接口（CAN、SPI、UART、Ethernet）\n- 定时器数量\n\n## 四、功能安全要求\n\n如需功能安全认证，选择 AURIX™ TC3xx 系列，支持 ISO 26262 ASIL-D 等级。\n\n## 五、开发工具\n\n英飞凌提供 DAVE™、AURIX Development Studio 等开发工具，以及丰富的评估板支持。",
+          "relatedArticles": ["how-to-select-igbt"]
+        }
+      ]
+    },
+    "notes": {
+      "name": "应用笔记",
+      "articles": [
+        {
+          "id": "igbt-application-notes",
+          "title": "IGBT 驱动电路设计要点",
+          "author": "王工",
+          "authorTitle": "功率电子工程师",
+          "date": "2026-03-15",
+          "tags": ["IGBT", "驱动电路", "应用笔记"],
+          "content": "本文介绍 IGBT 驱动电路设计的关键要点，包括驱动电压、栅极电阻、保护电路等。\n\n## 一、驱动电压选择\n\nIGBT 的驱动电压直接影响导通损耗和可靠性：\n- 开通电压 VGE(on)：推荐 +15V\n- 关断电压 VGE(off)：推荐 -5V 至 -8V\n\n## 二、栅极电阻设计\n\n栅极电阻 RG 影响开关速度和 EMI：\n- RG 越小，开关速度越快，损耗越低，但 EMI 越大\n- RG 越大，开关速度越慢，损耗越高，但 EMI 越小\n\n推荐值参考数据手册，通常为 5-50Ω。\n\n## 三、保护电路设计\n\n- 过流保护：使用去饱和检测或分流电阻\n- 过温保护：使用 IGBT 模块内置 NTC\n- 短路保护：选择具有短路耐受能力的 IGBT\n\n## 四、PCB 布局要点\n\n- 驱动回路尽可能短\n- 功率回路与控制回路分离\n- 使用多层板，提供完整地平面",
+          "relatedArticles": ["how-to-select-igbt"]
+        }
+      ]
+    },
+    "troubleshooting": {
+      "name": "问题排查",
+      "articles": [
+        {
+          "id": "igbt-failure-analysis",
+          "title": "IGBT 失效分析与排查",
+          "author": "陈工",
+          "authorTitle": "可靠性工程师",
+          "date": "2026-03-10",
+          "tags": ["IGBT", "失效分析", "故障排查"],
+          "content": "本文介绍 IGBT 常见失效模式和分析方法。\n\n## 一、常见失效模式\n\n1. **过流失效**：集电极电流超过额定值\n2. **过压失效**：VCE 超过耐压值\n3. **过热失效**：结温超过 150°C\n4. **栅极损坏**：VGE 超过±20V\n\n## 二、失效分析方法\n\n1. 外观检查：观察封装是否有裂纹、烧焦\n2. 万用表测量：测量各引脚间阻抗\n3. 曲线追踪仪：测量 VCE-Ic 特性曲线\n4. 切片分析：内部结构检查\n\n## 三、预防措施\n\n- 合理设计驱动电路\n- 完善保护功能\n- 良好的散热设计\n- 规范的焊接工艺",
+          "relatedArticles": ["igbt-application-notes"]
+        }
+      ]
+    },
+    "reviews": {
+      "name": "新品评测",
+      "articles": [
+        {
+          "id": "igbt7-review",
+          "title": "英飞凌 IGBT7 技术评测",
+          "author": "张工",
+          "authorTitle": "高级 FAE 工程师",
+          "date": "2026-03-05",
+          "tags": ["IGBT7", "新品", "评测"],
+          "content": "英飞凌 IGBT7 是第七代 IGBT 技术，相比 IGBT4 有哪些改进？本文进行详细评测。\n\n## 一、技术改进\n\n1. **芯片结构优化**：新的沟槽栅结构\n2. **饱和压降降低**：VCE(sat) 降低约 10%\n3. **开关损耗降低**：Eon+Eoff 降低约 20%\n4. **短路耐受能力提升**：从 5μs 提升到 10μs\n\n## 二、性能对比\n\n| 参数 | IGBT4 | IGBT7 | 改进 |\n|------|-------|-------|------|\n| VCE(sat) | 1.75V | 1.55V | -11% |\n| Eon+Eoff | 25mJ | 20mJ | -20% |\n| 短路耐受 | 5μs | 10μs | +100% |\n\n## 三、应用建议\n\nIGBT7 适用于对效率要求高的应用，如太阳能逆变器、UPS、伺服驱动等。",
+          "relatedArticles": ["how-to-select-igbt"]
+        }
+      ]
+    }
+  }
+}

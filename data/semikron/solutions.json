@@ -1,0 +1,42 @@
+{
+  "brand": "semikron",
+  "solutions": [
+    {
+      "id": "industrial-drive",
+      "title": "工业驱动解决方案",
+      "industry": "工业自动化",
+      "summary": "基于 Semikron IGBT 和 IPM 模块的工业驱动解决方案，适用于变频器、伺服驱动器等应用。",
+      "advantages": [
+        "采用 Semikron IGBT 技术，效率高",
+        "IPM 模块集成驱动和保护",
+        "完善的散热设计",
+        "符合工业标准"
+      ],
+      "bomList": [
+        {
+          "part": "SKM300GB12T4",
+          "description": "IGBT 模块 1200V/300A",
+          "quantity": 1,
+          "link": "/products/igbt/SKM300GB12T4.html"
+        }
+      ],
+      "applications": ["工业变频器", "伺服驱动器", "泵类风机"],
+      "content": "Semikron 工业驱动解决方案采用先进的 IGBT 技术和创新的封装工艺，为工业应用提供高效可靠的功率转换。"
+    },
+    {
+      "id": "renewable-energy",
+      "title": "新能源解决方案",
+      "industry": "新能源",
+      "summary": "基于 Semikron 功率器件的风能和太阳能逆变解决方案。",
+      "advantages": [
+        "高效率功率转换",
+        "高可靠性设计",
+        "符合并网标准",
+        "长寿命"
+      ],
+      "bomList": [],
+      "applications": ["风力发电", "太阳能逆变"],
+      "content": "Semikron 新能源解决方案为风能和太阳能应用提供高效的功率转换技术。"
+    }
+  ]
+}

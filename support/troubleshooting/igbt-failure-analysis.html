@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IGBT 失效分析与排查 - 介绍 IGBT 常见失效模式和分析方法">
+  <meta name="keywords" content="IGBT，失效分析，故障排查，过流，过压">
+  <title>IGBT 失效分析与排查 | 问题排查 | 力通电子</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="navbar-brand">
+          <svg class="navbar-logo" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="50" height="50" rx="10" fill="#0072CE"/>
+            <path d="M15 25 L25 15 L35 25 L25 35 Z" fill="white"/>
+            <circle cx="25" cy="25" r="4" fill="#FF6B00"/>
+          </svg>
+          <span style="font-weight: 600; color: #333;">力通电子</span>
+        </a>
+        <ul class="navbar-nav">
+          <li><a href="/" class="nav-link">首页</a></li>
+          <li><a href="/products/" class="nav-link">产品中心</a></li>
+          <li><a href="/solutions/" class="nav-link">解决方案</a></li>
+          <li><a href="/support/" class="nav-link active">技术支持</a></li>
+          <li><a href="/news/industry/" class="nav-link">新闻</a></li>
+          <li><a href="/about/" class="nav-link">关于我们</a></li>
+          <li><a href="/about/contact.html" class="nav-link">联系我们</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section class="page-header">
+        <div class="page-header-content">
+          <span class="page-header-badge" style="background: rgba(255,255,255,0.3);">问题排查</span>
+          <h1 class="page-header-title" style="margin-top: 16px;">IGBT 失效分析与排查</h1>
+          <div class="page-header-meta">
+            <span>📅 2026-03-10</span>
+            <span>👤 陈工</span>
+            <span>👁️ 阅读 (5 分钟)</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="/">首页</a> / <a href="/support/">技术支持</a> / <a href="/support/troubleshooting/">问题排查</a> / <span>IGBT 失效分析</span>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="content-sidebar">
+          <article class="main" style="max-width: 900px;">
+            <div class="author-box">
+              <div class="author-avatar">陈</div>
+              <div class="author-info">
+                <div class="author-name">陈工</div>
+                <div class="author-title">可靠性工程师 · 10 年失效分析经验</div>
+                <div class="author-meta">
+                  <span>📅 2026-03-10</span>
+                  <span>⏱️ 阅读 (5 分钟)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-content">
+              <p style="font-size: 18px; line-height: 1.8; color: #666; border-left: 4px solid #0072CE; padding-left: 24px; margin-bottom: 32px;">
+                本文介绍 IGBT 常见失效模式和分析方法，帮助工程师快速定位故障原因，采取有效的预防和解决措施。
+              </p>
+
+              <h2>一、常见失效模式</h2>
+              <h3>1. 过流失效</h3>
+              <p>集电极电流超过额定值，导致芯片过热损坏：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>现象</strong>：IGBT 短路，CE 之间阻抗接近 0Ω</li>
+                <li><strong>原因</strong>：负载短路、控制信号异常、保护电路失效</li>
+                <li><strong>预防</strong>：设置合理的过流保护阈值，确保保护电路正常工作</li>
+              </ul>
+
+              <h3>2. 过压失效</h3>
+              <p>VCE 超过耐压值，导致雪崩击穿：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>现象</strong>：IGBT 短路或开路，封装可能有爆裂痕迹</li>
+                <li><strong>原因</strong>：母线电压过高、关断过电压、雷击浪涌</li>
+                <li><strong>预防</strong>：使用吸收电路（Snubber）、优化 PCB 布局减小寄生电感</li>
+              </ul>
+
+              <h3>3. 过热失效</h3>
+              <p>结温超过 150°C（IGBT7 为 175°C），导致芯片损坏：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>现象</strong>：IGBT 性能退化或永久损坏，封装可能变色</li>
+                <li><strong>原因</strong>：散热器设计不当、风扇故障、导热硅脂老化、过载运行</li>
+                <li><strong>预防</strong>：合理设计散热系统，使用 NTC 实时监测温度</li>
+              </ul>
+
+              <h3>4. 栅极损坏</h3>
+              <p>VGE 超过±20V，导致栅极氧化层击穿：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>现象</strong>：GE 之间短路或漏电增大</li>
+                <li><strong>原因</strong>：驱动电压异常、静电放电、米勒电容耦合</li>
+                <li><strong>预防</strong>：使用稳压管限制栅极电压，添加栅极电阻</li>
+              </ul>
+
+              <h2>二、失效分析方法</h2>
+              <h3>1. 外观检查</h3>
+              <p>观察封装是否有裂纹、烧焦、膨胀等异常：</p>
+              <ul style="line-height: 2.2;">
+                <li>使用放大镜或显微镜检查引脚和封装表面</li>
+                <li>检查焊点是否有虚焊、裂纹</li>
+                <li>检查散热器接触面是否有氧化、划痕</li>
+              </ul>
+
+              <h3>2. 万用表测量</h3>
+              <p>测量各引脚间阻抗，判断是否短路或开路：</p>
+              <div class="table-responsive">
+                <table class="spec-table">
+                  <thead>
+                    <tr><th>测量点</th><th>正常值</th><th>异常判断</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>C-E</td><td>高阻抗（>1MΩ）</td><td>接近 0Ω为短路</td></tr>
+                    <tr><td>G-E</td><td>高阻抗（>1MΩ）</td><td>接近 0Ω为栅极损坏</td></tr>
+                    <tr><td>二极管压降</td><td>0.3-0.7V</td><td>过大或过小为异常</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3>3. 曲线追踪仪</h3>
+              <p>测量 VCE-Ic 特性曲线，与正常器件对比：</p>
+              <ul style="line-height: 2.2;">
+                <li>观察饱和压降 VCE(sat) 是否异常</li>
+                <li>检查阈值电压 VGE(th) 是否偏移</li>
+                <li>评估开关特性是否退化</li>
+              </ul>
+
+              <h3>4. 切片分析</h3>
+              <p>对失效器件进行切片，观察内部结构：</p>
+              <ul style="line-height: 2.2;">
+                <li>使用金相显微镜观察芯片结构</li>
+                <li>检查键合线是否断裂、脱落</li>
+                <li>分析失效位置和原因</li>
+              </ul>
+
+              <h2>三、预防措施</h2>
+              <ul style="line-height: 2.2;">
+                <li><strong>合理设计驱动电路</strong>：选择合适的驱动电压和栅极电阻</li>
+                <li><strong>完善保护功能</strong>：过流、过压、过温、短路保护缺一不可</li>
+                <li><strong>良好的散热设计</strong>：根据功耗选择合适的散热器，确保风道畅通</li>
+                <li><strong>规范的焊接工艺</strong>：控制焊接温度和时间，避免热损伤</li>
+                <li><strong>定期维护检测</strong>：定期检查散热器、风扇、导热硅脂状态</li>
+              </ul>
+
+              <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, #0072CE 0%, #005A9E 100%); border-radius: 12px; text-align: center; color: white;">
+                <h3 style="color: white; margin-bottom: 16px;">需要失效分析支持？</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 24px;">联系我们的 FAE 团队，提供专业的失效分析服务</p>
+                <a href="/about/contact.html" class="btn btn-cta" style="background: #FF6B00; border: none;">联系技术支持</a>
+              </div>
+
+              <h2>相关文章</h2>
+              <ul style="color: #666;">
+                <li><a href="/support/notes/igbt-application-notes.html" style="color: #0072CE;">IGBT 驱动电路设计要点</a></li>
+                <li><a href="/support/guides/how-to-select-igbt.html" style="color: #0072CE;">如何选择适合的 IGBT 型号</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">文章分类</h4>
+              <ul class="sidebar-nav">
+                <li><a href="/support/guides/" class="sidebar-link">选型指南</a></li>
+                <li><a href="/support/notes/" class="sidebar-link">应用笔记</a></li>
+                <li><a href="/support/troubleshooting/" class="sidebar-link active">问题排查</a></li>
+                <li><a href="/support/reviews/" class="sidebar-link">新品评测</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">相关文章</h4>
+              <ul class="sidebar-nav">
+                <li><a href="/support/notes/igbt-application-notes.html" class="sidebar-link">IGBT 驱动电路设计</a></li>
+                <li><a href="/support/guides/how-to-select-igbt.html" class="sidebar-link">IGBT 选型指南</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">向工程师提问</h4>
+              <p style="font-size: 14px; color: #666; margin-bottom: 12px;">有技术问题？我们的 FAE 团队为您解答</p>
+              <a href="/about/contact.html" class="btn btn-primary" style="width: 100%;">联系技术支持</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bottom">
+        <span>© 2026 力通电子 版权所有</span>
+        <span>QQ: 1145711755</span>
+      </div>
+    </footer>
+  </div>
+  <script src="../../script.js"></script>
+</body>
+</html>

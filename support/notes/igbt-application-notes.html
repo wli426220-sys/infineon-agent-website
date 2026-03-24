@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IGBT 驱动电路设计要点 - 介绍 IGBT 驱动电路设计的关键要点，包括驱动电压、栅极电阻、保护电路等">
+  <meta name="keywords" content="IGBT，驱动电路，应用笔记，栅极电阻">
+  <title>IGBT 驱动电路设计要点 | 应用笔记 | 力通电子</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="navbar-brand">
+          <svg class="navbar-logo" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="50" height="50" rx="10" fill="#0072CE"/>
+            <path d="M15 25 L25 15 L35 25 L25 35 Z" fill="white"/>
+            <circle cx="25" cy="25" r="4" fill="#FF6B00"/>
+          </svg>
+          <span style="font-weight: 600; color: #333;">力通电子</span>
+        </a>
+        <ul class="navbar-nav">
+          <li><a href="/" class="nav-link">首页</a></li>
+          <li><a href="/products/" class="nav-link">产品中心</a></li>
+          <li><a href="/solutions/" class="nav-link">解决方案</a></li>
+          <li><a href="/support/" class="nav-link active">技术支持</a></li>
+          <li><a href="/news/industry/" class="nav-link">新闻</a></li>
+          <li><a href="/about/" class="nav-link">关于我们</a></li>
+          <li><a href="/about/contact.html" class="nav-link">联系我们</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section class="page-header">
+        <div class="page-header-content">
+          <span class="page-header-badge" style="background: rgba(255,255,255,0.3);">应用笔记</span>
+          <h1 class="page-header-title" style="margin-top: 16px;">IGBT 驱动电路设计要点</h1>
+          <div class="page-header-meta">
+            <span>📅 2026-03-15</span>
+            <span>👤 王工</span>
+            <span>👁️ 阅读 (6 分钟)</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="/">首页</a> / <a href="/support/">技术支持</a> / <a href="/support/notes/">应用笔记</a> / <span>IGBT 驱动电路</span>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="content-sidebar">
+          <article class="main" style="max-width: 900px;">
+            <div class="author-box">
+              <div class="author-avatar">王</div>
+              <div class="author-info">
+                <div class="author-name">王工</div>
+                <div class="author-title">功率电子工程师 · 8 年 IGBT 应用经验</div>
+                <div class="author-meta">
+                  <span>📅 2026-03-15</span>
+                  <span>⏱️ 阅读 (6 分钟)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-content">
+              <p style="font-size: 18px; line-height: 1.8; color: #666; border-left: 4px solid #0072CE; padding-left: 24px; margin-bottom: 32px;">
+                本文介绍 IGBT 驱动电路设计的关键要点，包括驱动电压、栅极电阻、保护电路等，帮助工程师设计可靠高效的 IGBT 驱动系统。
+              </p>
+
+              <h2>一、驱动电压选择</h2>
+              <p>IGBT 的驱动电压直接影响导通损耗和可靠性：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>开通电压 VGE(on)</strong>：推荐 +15V，确保 IGBT 完全导通，降低导通损耗</li>
+                <li><strong>关断电压 VGE(off)</strong>：推荐 -5V 至 -8V，确保 IGBT 可靠关断，防止误导通</li>
+                <li><strong>最大允许电压</strong>：±20V，超过此值可能损坏栅极氧化层</li>
+              </ul>
+              <div style="background: #f8f9fa; padding: 24px; border-radius: 8px; margin: 24px 0;">
+                <h3 style="margin-top: 0;">设计建议</h3>
+                <p>对于噪声较大的工业环境，建议使用 -8V 关断电压，提高抗干扰能力。对于电池供电等低功耗应用，可使用 0V 关断，简化电路设计。</p>
+              </div>
+
+              <h2>二、栅极电阻设计</h2>
+              <p>栅极电阻 RG 影响开关速度和 EMI：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>RG 越小</strong>：开关速度越快，损耗越低，但 EMI 越大，可能引起振荡</li>
+                <li><strong>RG 越大</strong>：开关速度越慢，损耗越高，但 EMI 越小，开关更平滑</li>
+              </ul>
+              <div class="table-responsive">
+                <table class="spec-table">
+                  <thead>
+                    <tr><th>模块电流</th><th>推荐 RG(Ω)</th><th>开通</th><th>关断</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>50-100A</td><td>10-20</td><td>15Ω</td><td>10Ω</td></tr>
+                    <tr><td>100-200A</td><td>5-10</td><td>6.8Ω</td><td>4.7Ω</td></tr>
+                    <tr><td>200-400A</td><td>3-5</td><td>3.9Ω</td><td>2.7Ω</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>推荐值参考数据手册，通常为 5-50Ω。实际设计中，建议通过双脉冲测试优化 RG 值，在损耗和 EMI 之间取得平衡。</p>
+
+              <h2>三、保护电路设计</h2>
+              <h3>1. 过流保护</h3>
+              <p>使用去饱和检测（DESAT）或分流电阻检测过流：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>DESAT 检测</strong>：监测 VCE 电压，当 VCE > 阈值（通常 7-9V）时触发保护</li>
+                <li><strong>分流电阻</strong>：检测发射极电流，精度高但增加损耗</li>
+              </ul>
+
+              <h3>2. 过温保护</h3>
+              <p>使用 IGBT 模块内置 NTC 热敏电阻：</p>
+              <ul style="line-height: 2.2;">
+                <li>NTC 电阻随温度升高而降低</li>
+                <li>通过测量 NTC 电压计算结温</li>
+                <li>当温度超过阈值（通常 150°C）时关断 IGBT</li>
+              </ul>
+
+              <h3>3. 短路保护</h3>
+              <p>IGBT7 的短路耐受时间为 10μs，保护电路必须在此时间内响应：</p>
+              <ul style="line-height: 2.2;">
+                <li>检测到短路后立即关断 IGBT</li>
+                <li>采用软关断技术，降低关断过电压</li>
+                <li>锁定驱动输出，防止反复开通</li>
+              </ul>
+
+              <h2>四、PCB 布局要点</h2>
+              <p>良好的 PCB 布局对驱动性能至关重要：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>驱动回路尽可能短</strong>：减小寄生电感，降低开关过电压</li>
+                <li><strong>功率回路与控制回路分离</strong>：避免噪声耦合</li>
+                <li><strong>使用多层板</strong>：提供完整地平面，提高抗干扰能力</li>
+                <li><strong>栅极走线加粗</strong>：降低寄生电感，通常使用 20-50mil 线宽</li>
+                <li><strong>去耦电容靠近驱动 IC</strong>：通常使用 10μF 钽电容 + 0.1μF 陶瓷电容并联</li>
+              </ul>
+
+              <h2>五、推荐驱动 IC</h2>
+              <div class="table-responsive">
+                <table class="spec-table">
+                  <thead>
+                    <tr><th>型号</th><th>通道数</th><th>峰值电流</th><th>保护功能</th><th>应用</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1ED020I12FA</td>
+                      <td>单通道</td>
+                      <td>2A</td>
+                      <td>DESAT、UVLO</td>
+                      <td>小功率 IGBT</td>
+                    </tr>
+                    <tr>
+                      <td>2ED020I12FA</td>
+                      <td>双通道</td>
+                      <td>2A</td>
+                      <td>DESAT、UVLO</td>
+                      <td>半桥 IGBT</td>
+                    </tr>
+                    <tr>
+                      <td>SKiiP2314GB123-214VUL</td>
+                      <td>三通道</td>
+                      <td>集成</td>
+                      <td>过流、过温、欠压</td>
+                      <td>IPM 模块</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>六、设计实例</h2>
+              <p>以 50kW 工业变频器为例，IGBT 型号为 FF300R12ME4：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>驱动电压</strong>：+15V/-8V</li>
+                <li><strong>栅极电阻</strong>：RG(on)=6.8Ω，RG(off)=4.7Ω</li>
+                <li><strong>DESAT 阈值</strong>：8.5V</li>
+                <li><strong>去耦电容</strong>：10μF + 0.1μF</li>
+                <li><strong>驱动 IC</strong>：2ED020I12FA 双通道驱动</li>
+              </ul>
+
+              <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, #0072CE 0%, #005A9E 100%); border-radius: 12px; text-align: center; color: white;">
+                <h3 style="color: white; margin-bottom: 16px;">获取驱动电路参考设计</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 24px;">联系我们的 FAE 团队，获取完整的驱动电路原理图和 PCB 布局指南</p>
+                <a href="/about/contact.html" class="btn btn-cta" style="background: #FF6B00; border: none;">联系技术支持</a>
+              </div>
+
+              <h2>相关文章</h2>
+              <ul style="color: #666;">
+                <li><a href="/support/guides/how-to-select-igbt.html" style="color: #0072CE;">如何选择适合的 IGBT 型号</a></li>
+                <li><a href="/support/troubleshooting/igbt-failure-analysis.html" style="color: #0072CE;">IGBT 失效分析与排查</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">文章分类</h4>
+              <ul class="sidebar-nav">
+                <li><a href="/support/guides/" class="sidebar-link">选型指南</a></li>
+                <li><a href="/support/notes/" class="sidebar-link active">应用笔记</a></li>
+                <li><a href="/support/troubleshooting/" class="sidebar-link">问题排查</a></li>
+                <li><a href="/support/reviews/" class="sidebar-link">新品评测</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">相关文章</h4>
+              <ul class="sidebar-nav">
+                <li><a href="/support/guides/how-to-select-igbt.html" class="sidebar-link">IGBT 选型指南</a></li>
+                <li><a href="/support/troubleshooting/igbt-failure-analysis.html" class="sidebar-link">IGBT 失效分析</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">向工程师提问</h4>
+              <p style="font-size: 14px; color: #666; margin-bottom: 12px;">有技术问题？我们的 FAE 团队为您解答</p>
+              <a href="/about/contact.html" class="btn btn-primary" style="width: 100%;">联系技术支持</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bottom">
+        <span>© 2026 力通电子 版权所有</span>
+        <span>QQ: 1145711755</span>
+      </div>
+    </footer>
+  </div>
+  <script src="../../script.js"></script>
+</body>
+</html>

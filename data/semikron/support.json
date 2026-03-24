@@ -1,0 +1,19 @@
+{
+  "brand": "semikron",
+  "categories": {
+    "guides": {
+      "name": "选型指南",
+      "articles": [
+        {
+          "id": "how-to-select-semikron-igbt",
+          "title": "如何选择适合的 Semikron IGBT 型号",
+          "author": "李工",
+          "date": "2026-03-22",
+          "tags": ["Semikron", "IGBT", "选型"],
+          "content": "Semikron 西门康 IGBT 模块选型指南，从电压等级、电流等级、封装形式等方面详细介绍。",
+          "relatedArticles": []
+        }
+      ]
+    }
+  }
+}

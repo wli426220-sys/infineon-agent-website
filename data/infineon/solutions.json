@@ -1,0 +1,137 @@
+{
+  "brand": "infineon",
+  "solutions": [
+    {
+      "id": "ev-charging",
+      "title": "电动汽车充电解决方案",
+      "industry": "汽车电子",
+      "summary": "基于英飞凌 IGBT 和 SiC 器件的充电桩解决方案，支持直流快充和交流慢充，效率高达 96% 以上。",
+      "blockDiagram": "/assets/svg/solutions/ev-charging-diagram.svg",
+      "advantages": [
+        "采用英飞凌 IGBT7 技术，开关损耗降低 20%",
+        "SiC MOSFET 实现高频高效转换",
+        "完整的系统级解决方案，包括控制 IC 和驱动",
+        "符合国标、欧标、美标充电标准"
+      ],
+      "bomList": [
+        {
+          "part": "FF300R12ME4",
+          "description": "IGBT 模块 1200V/300A",
+          "quantity": 6,
+          "link": "/products/igbt/FF300R12ME4.html"
+        },
+        {
+          "part": "1ED020I12FA",
+          "description": "IGBT 驱动 IC",
+          "quantity": 6,
+          "link": "#"
+        },
+        {
+          "part": "IPD90N04S4L-04",
+          "description": "OptiMOS™ MOSFET",
+          "quantity": 12,
+          "link": "#"
+        }
+      ],
+      "applications": [
+        "直流快充桩（50kW-350kW）",
+        "交流慢充桩（7kW-22kW）",
+        "无线充电系统"
+      ],
+      "content": "随着电动汽车的普及，充电基础设施的建设变得至关重要。英飞凌提供完整的电动汽车充电解决方案，涵盖从交流慢充到直流快充的全功率范围。\n\n## 方案框图\n\n直流快充系统主要由 AC-DC 整流级和 DC-DC 变换级组成。AC-DC 级采用维也纳整流器拓扑，使用英飞凌 650V/1200V IGBT 或 SiC MOSFET 实现高功率因数校正。DC-DC 级采用 LLC 谐振变换器或移相全桥拓扑，实现高效率的电压变换和电气隔离。\n\n## 核心优势\n\n1. **高效率**：采用 IGBT7 技术和 SiC 器件，系统效率高达 96% 以上\n2. **高功率密度**：高频开关设计减小磁性元件体积\n3. **高可靠性**：完善的保护功能，包括过流、过压、过温保护\n4. **标准化设计**：符合 OCPP、CHAdeMO、CCS 等国际标准\n\n## 推荐物料清单\n\n详见上方 BOM List，所有型号均可点击链接查看产品详情。\n\n## 应用场景\n\n- 公共充电站\n- 商业停车场\n- 住宅小区\n- 高速公路服务区"
+    },
+    {
+      "id": "motor-drive",
+      "title": "工业电机驱动方案",
+      "industry": "工业自动化",
+      "summary": "采用英飞凌 IGBT 模块和 IPM 智能功率模块的电机驱动解决方案，适用于工业变频器、伺服驱动等应用。",
+      "blockDiagram": "/assets/svg/solutions/motor-drive-diagram.svg",
+      "advantages": [
+        "IGBT7 技术，开关损耗降低 20%",
+        "完整的驱动保护功能",
+        "支持 400V/690V 电网电压",
+        "符合 IEC 61800 标准"
+      ],
+      "bomList": [
+        {
+          "part": "FF450R12ME4",
+          "description": "IGBT 模块 1200V/450A",
+          "quantity": 1,
+          "link": "/products/igbt/FF450R12ME4.html"
+        },
+        {
+          "part": "2ED020I12FA",
+          "description": "双通道 IGBT 驱动",
+          "quantity": 3,
+          "link": "#"
+        }
+      ],
+      "applications": [
+        "工业变频器",
+        "伺服驱动器",
+        "泵类风机驱动"
+      ],
+      "content": "工业电机驱动是工业自动化的核心，英飞凌提供从低压到高压、从小功率到大功率的完整电机驱动解决方案。"
+    },
+    {
+      "id": "renewable",
+      "title": "可再生能源逆变方案",
+      "industry": "新能源",
+      "summary": "基于英飞凌功率器件的太阳能逆变器和风能变流器解决方案，实现高效清洁能源转换。",
+      "blockDiagram": "/assets/svg/solutions/renewable-diagram.svg",
+      "advantages": [
+        "高效率，降低系统损耗",
+        "高可靠性，25 年使用寿命",
+        "符合并网标准",
+        "完善的保护功能"
+      ],
+      "bomList": [],
+      "applications": [
+        "组串式逆变器",
+        "集中式逆变器",
+        "储能系统"
+      ],
+      "content": "可再生能源是未来能源发展的重要方向。英飞凌提供太阳能逆变器和风能变流器解决方案，帮助客户实现高效、可靠的清洁能源转换。"
+    },
+    {
+      "id": "power-supply",
+      "title": "开关电源解决方案",
+      "industry": "电源",
+      "summary": "英飞凌提供完整的开关电源解决方案，包括 AC-DC、DC-DC 转换器，适用于工业、通信、消费电子等领域。",
+      "blockDiagram": "/assets/svg/solutions/power-supply-diagram.svg",
+      "advantages": [
+        "高效率，满足能效标准",
+        "高功率密度",
+        "低 EMI 设计",
+        "完善的保护功能"
+      ],
+      "bomList": [],
+      "applications": [
+        "工业电源",
+        "通信电源",
+        "LED 驱动电源"
+      ],
+      "content": "开关电源是现代电子设备的核心供电单元。英飞凌提供从控制器到功率器件的完整解决方案，帮助客户设计高效、可靠的电源系统。"
+    },
+    {
+      "id": "automotive",
+      "title": "汽车电子解决方案",
+      "industry": "汽车电子",
+      "summary": "英飞凌提供完整的汽车电子解决方案，包括电驱系统、车载充电、DC-DC 转换等，满足车规级要求。",
+      "blockDiagram": "/assets/svg/solutions/automotive-diagram.svg",
+      "advantages": [
+        "符合 AEC-Q101 车规认证",
+        "高可靠性，长寿命",
+        "系统级解决方案",
+        "技术支持和服务"
+      ],
+      "bomList": [],
+      "applications": [
+        "主驱逆变器",
+        "车载充电机（OBC）",
+        "DC-DC 转换器"
+      ],
+      "content": "汽车电动化和智能化是汽车产业的发展趋势。英飞凌作为汽车半导体领导者，提供完整的汽车电子解决方案，包括电驱系统、车载充电、辅助驾驶等。"
+    }
+  ]
+}

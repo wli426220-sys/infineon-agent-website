@@ -1,0 +1,207 @@
+{
+  "brand": "infineon",
+  "categories": {
+    "igbt": {
+      "name": "IGBT",
+      "description": "英飞凌 IGBT（绝缘栅双极型晶体管）是业界领先的功率半导体器件，结合了 MOSFET 的高输入阻抗和 BJT 的低导通压降优点。",
+      "products": [
+        {
+          "model": "FF300R12ME4",
+          "series": "EconoDUAL™ 3",
+          "parameters": {
+            "voltage": "1200V",
+            "current": "300A",
+            "vce_sat": "1.75V",
+            "package": "EconoDUAL™ 3"
+          },
+          "description": "英飞凌 EconoDUAL™ 3 封装 IGBT 模块，1200V/300A，采用 IGBT4 技术，低饱和压降，适用于工业变频器、伺服驱动、UPS 等应用。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/FF300R12ME4.pdf",
+          "applications": ["工业变频", "伺服驱动", "UPS"],
+          "relatedProducts": ["FF450R12ME4", "IKW40N120H3"],
+          "faq": [
+            {
+              "question": "FF300R12ME4 的短路耐受时间是多少？",
+              "answer": "FF300R12ME4 具有 10μs @ 125°C 的短路耐受能力。"
+            },
+            {
+              "question": "EconoDUAL™ 3 封装的尺寸是多少？",
+              "answer": "EconoDUAL™ 3 封装尺寸为 62mm x 34mm x 17mm。"
+            }
+          ]
+        },
+        {
+          "model": "FF450R12ME4",
+          "series": "EconoDUAL™ 3",
+          "parameters": {
+            "voltage": "1200V",
+            "current": "450A",
+            "vce_sat": "1.65V",
+            "package": "EconoDUAL™ 3"
+          },
+          "description": "英飞凌 EconoDUAL™ 3 封装 IGBT 模块，1200V/450A，适用于大功率工业驱动应用。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/FF450R12ME4.pdf",
+          "applications": ["工业变频", "风力发电"],
+          "relatedProducts": ["FF300R12ME4"],
+          "faq": []
+        },
+        {
+          "model": "IKW40N120H3",
+          "series": "IGBT7",
+          "parameters": {
+            "voltage": "1200V",
+            "current": "40A",
+            "vce_sat": "1.55V",
+            "package": "TO-247"
+          },
+          "description": "英飞凌 IGBT7 技术分立器件，1200V/40A，TO-247 封装，低开关损耗。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/IKW40N120H3.pdf",
+          "applications": ["感应加热", "焊接"],
+          "relatedProducts": [],
+          "faq": []
+        },
+        {
+          "model": "IKW75N60H3",
+          "series": "IGBT7",
+          "parameters": {
+            "voltage": "600V",
+            "current": "75A",
+            "vce_sat": "1.45V",
+            "package": "TO-247"
+          },
+          "description": "英飞凌 IGBT7 技术分立器件，600V/75A，适用于太阳能逆变器和 UPS。",
+          "stock": "inquiry",
+          "datasheet": "/datasheets/IKW75N60H3.pdf",
+          "applications": ["太阳能逆变器", "UPS"],
+          "relatedProducts": [],
+          "faq": []
+        }
+      ]
+    },
+    "mosfet": {
+      "name": "MOSFET",
+      "description": "英飞凌 OptiMOS™系列功率 MOSFET，提供高效率、低导通电阻和出色的开关性能。",
+      "products": [
+        {
+          "model": "BSC097N04LS",
+          "series": "OptiMOS™ 5",
+          "parameters": {
+            "voltage": "40V",
+            "current": "300A",
+            "rds_on": "0.97mΩ",
+            "package": "PG-TDSON-8"
+          },
+          "description": "OptiMOS™ 5 功率 MOSFET，40V，超低导通电阻，适用于同步整流和 DC-DC 转换器。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/BSC097N04LS.pdf",
+          "applications": ["DC-DC 转换", "同步整流"],
+          "relatedProducts": [],
+          "faq": []
+        }
+      ]
+    },
+    "mcu": {
+      "name": "MCU 微控制器",
+      "description": "英飞凌 AURIX™、XMC™系列 32 位微控制器，专为汽车和工业应用设计。",
+      "products": [
+        {
+          "model": "TC399XX",
+          "series": "AURIX™ TC3xx",
+          "parameters": {
+            "core": "TriCore™",
+            "frequency": "300MHz",
+            "flash": "16MB",
+            "package": "LFBGA-292"
+          },
+          "description": "AURIX™ TC3xx 系列 32 位微控制器，三核 TriCore™架构，适用于汽车 ADAS 和动力系统。",
+          "stock": "inquiry",
+          "datasheet": "/datasheets/TC399XX.pdf",
+          "applications": ["汽车 ADAS", "动力系统"],
+          "relatedProducts": [],
+          "faq": []
+        }
+      ]
+    },
+    "sensor": {
+      "name": "传感器",
+      "description": "英飞凌提供电流、电压、位置、压力等多种传感器，高精度高可靠性。",
+      "products": [
+        {
+          "model": "TLE4997",
+          "series": "Hall 传感器",
+          "parameters": {
+            "type": "线性 Hall",
+            "supply": "4.5-5.5V",
+            "output": "模拟/PWM",
+            "package": "PG-SSO-3"
+          },
+          "description": "线性 Hall 效应传感器，用于电流检测和位置检测应用。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/TLE4997.pdf",
+          "applications": ["电流检测", "位置检测"],
+          "relatedProducts": [],
+          "faq": []
+        }
+      ]
+    },
+    "diode": {
+      "name": "二极管",
+      "description": "英飞凌功率二极管，包括 HEXFRED 超快恢复二极管、SiC 肖特基二极管等，提供高效率和高可靠性。",
+      "products": [
+        {
+          "model": "FFH40US60DN",
+          "series": "HEXFRED",
+          "parameters": {
+            "voltage": "600V",
+            "current": "40A",
+            "vf": "1.45V",
+            "trr": "35ns",
+            "package": "TO-247"
+          },
+          "description": "英飞凌 HEXFRED 超快恢复二极管，600V/40A，反向恢复时间仅 35ns，适用于高频开关应用。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/FFH40US60DN.pdf",
+          "applications": ["PFC 电路", "高频整流", "逆变器"],
+          "relatedProducts": ["FFH30US60DN", "IDW30G65C5"],
+          "faq": []
+        },
+        {
+          "model": "FFH30US60DN",
+          "series": "HEXFRED",
+          "parameters": {
+            "voltage": "600V",
+            "current": "30A",
+            "vf": "1.35V",
+            "trr": "30ns",
+            "package": "TO-247"
+          },
+          "description": "英飞凌 HEXFRED 超快恢复二极管，600V/30A，低正向压降，适用于 PFC 和开关电源。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/FFH30US60DN.pdf",
+          "applications": ["PFC 电路", "开关电源", "LED 驱动"],
+          "relatedProducts": ["FFH40US60DN"],
+          "faq": []
+        },
+        {
+          "model": "IDW30G65C5",
+          "series": "iM5 SiC",
+          "parameters": {
+            "voltage": "650V",
+            "current": "30A",
+            "vf": "1.55V",
+            "trr": "N/A",
+            "package": "TO-247"
+          },
+          "description": "英飞凌 650V SiC 肖特基二极管，零反向恢复电流，适用于高效率开关电源和光伏逆变器。",
+          "stock": "inquiry",
+          "datasheet": "/datasheets/IDW30G65C5.pdf",
+          "applications": ["光伏逆变器", "车载充电机", "服务器电源"],
+          "relatedProducts": ["IDW20G65C5", "FFH40US60DN"],
+          "faq": []
+        }
+      ]
+    }
+  }
+}

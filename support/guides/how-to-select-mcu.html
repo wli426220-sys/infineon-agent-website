@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="如何选择适合的英飞凌 MCU - AURIX、XMC 系列选型指南">
+  <meta name="keywords" content="MCU 选型，AURIX,XMC，微控制器">
+  <title>如何选择适合的英飞凌 MCU | 选型指南 | 力通电子</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="navbar-brand">
+          <svg class="navbar-logo" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="50" height="50" rx="10" fill="#0072CE"/>
+            <path d="M15 25 L25 15 L35 25 L25 35 Z" fill="white"/>
+            <circle cx="25" cy="25" r="4" fill="#FF6B00"/>
+          </svg>
+          <span style="font-weight: 600; color: #333;">力通电子</span>
+        </a>
+        <ul class="navbar-nav">
+          <li><a href="/" class="nav-link">首页</a></li>
+          <li><a href="/products/" class="nav-link">产品中心</a></li>
+          <li><a href="/solutions/" class="nav-link">解决方案</a></li>
+          <li><a href="/support/" class="nav-link active">技术支持</a></li>
+          <li><a href="/news/industry/" class="nav-link">新闻</a></li>
+          <li><a href="/about/" class="nav-link">关于我们</a></li>
+          <li><a href="/about/contact.html" class="nav-link">联系我们</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section class="page-header">
+        <div class="page-header-content">
+          <h1 class="page-header-title">如何选择适合的英飞凌 MCU</h1>
+        </div>
+      </section>
+
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="/">首页</a> / <a href="/support/">技术支持</a> / <a href="/support/guides/">选型指南</a> / <span>MCU 选型</span>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="content-sidebar">
+          <article class="main" style="max-width: 900px;">
+            <div class="author-box">
+              <div class="author-avatar">李</div>
+              <div class="author-info">
+                <div class="author-name">李工</div>
+                <div class="author-title">MCU 应用专家 · 8 年嵌入式系统开发经验</div>
+                <div class="author-meta">
+                  <span>📅 2026-03-22</span>
+                  <span>⏱️ 阅读 (6 分钟)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-content">
+              <p style="font-size: 18px; line-height: 1.8; color: #666; border-left: 4px solid #0072CE; padding-left: 24px; margin-bottom: 32px;">
+                英飞凌提供 AURIX™和 XMC™两大系列 32 位微控制器，本文介绍如何根据应用需求选择合适的 MCU 型号。
+              </p>
+
+              <h2>一、AURIX™ vs XMC™ 系列选择</h2>
+              
+              <h3>AURIX™系列</h3>
+              <ul style="line-height: 2.2;">
+                <li>三核 TriCore™架构</li>
+                <li>功能安全等级 ASIL-D</li>
+                <li>适用于汽车动力总成、ADAS、工业安全应用</li>
+                <li>工作温度：-40°C ~ +150°C</li>
+              </ul>
+
+              <h3>XMC™系列</h3>
+              <ul style="line-height: 2.2;">
+                <li>ARM® Cortex®-M 内核（M0/M4/F4）</li>
+                <li>高性价比</li>
+                <li>适用于工业控制、电机驱动、数字电源</li>
+                <li>工作温度：-40°C ~ +85°C</li>
+              </ul>
+
+              <h2>二、确定性能需求</h2>
+              <div class="table-responsive">
+                <table class="spec-table">
+                  <thead>
+                    <tr><th>系列</th><th>CPU 频率</th><th>Flash</th><th>RAM</th><th>典型应用</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>AURIX™ TC3xx</td>
+                      <td>300MHz</td>
+                      <td>2-16MB</td>
+                      <td>512KB-2MB</td>
+                      <td>汽车动力总成</td>
+                    </tr>
+                    <tr>
+                      <td>XMC4000</td>
+                      <td>144MHz</td>
+                      <td>128KB-2MB</td>
+                      <td>32-352KB</td>
+                      <td>工业电机驱动</td>
+                    </tr>
+                    <tr>
+                      <td>XMC1000</td>
+                      <td>32MHz</td>
+                      <td>32-200KB</td>
+                      <td>8-24KB</td>
+                      <td>数字电源</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>三、外设需求</h2>
+              <p>根据应用选择必要的外设：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>ADC</strong>：通道数和精度（12 位/16 位）</li>
+                <li><strong>PWM</strong>：通道数和分辨率</li>
+                <li><strong>通信接口</strong>：CAN/CAN-FD、SPI、UART、Ethernet</li>
+                <li><strong>定时器</strong>：数量和功能</li>
+              </ul>
+
+              <h2>四、功能安全要求</h2>
+              <p>如需功能安全认证，选择 AURIX™ TC3xx 系列：</p>
+              <ul style="line-height: 2.2;">
+                <li>支持 ISO 26262 ASIL-D 等级</li>
+                <li>内置锁步核（Lockstep）</li>
+                <li>ECC 内存保护</li>
+                <li>内置自测试（BIST）功能</li>
+              </ul>
+
+              <h2>五、推荐型号</h2>
+              <div class="table-responsive">
+                <table class="spec-table">
+                  <thead>
+                    <tr><th>型号</th><th>系列</th><th>内核</th><th>频率</th><th>Flash</th><th>应用</th><th>操作</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>TC399XX</strong></td>
+                      <td>AURIX™ TC3xx</td>
+                      <td>TriCore™ 三核</td>
+                      <td>300MHz</td>
+                      <td>16MB</td>
+                      <td>汽车 ADAS</td>
+                      <td><a href="/products/mcu/TC399XX.html" class="btn btn-sm btn-primary">详情</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>XMC4500</strong></td>
+                      <td>XMC4000</td>
+                      <td>Cortex-M4F</td>
+                      <td>144MHz</td>
+                      <td>1MB</td>
+                      <td>电机驱动</td>
+                      <td><a href="/products/mcu/" class="btn btn-sm btn-outline">询价</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>六、开发工具</h2>
+              <p>英飞凌提供完整的开发工具链：</p>
+              <ul style="line-height: 2.2;">
+                <li><strong>DAVE™</strong>：XMC 系列免费开发环境</li>
+                <li><strong>AURIX Development Studio</strong>：基于 Eclipse 的 IDE</li>
+                <li><strong>评估板</strong>：多种型号可选，快速原型开发</li>
+              </ul>
+
+              <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, #0072CE 0%, #005A9E 100%); border-radius: 12px; text-align: center; color: white;">
+                <h3 style="color: white; margin-bottom: 16px;">需要选型帮助？</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 24px;">联系我们的 FAE 工程师，获取专业的 MCU 选型建议</p>
+                <a href="/about/contact.html" class="btn btn-cta" style="background: #FF6B00; border: none;">联系技术支持</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">文章目录</h4>
+              <ul class="sidebar-nav toc-list">
+                <li><a href="#" class="toc-link sidebar-link">一、AURIX vs XMC 选择</a></li>
+                <li><a href="#" class="toc-link sidebar-link">二、确定性能需求</a></li>
+                <li><a href="#" class="toc-link sidebar-link">三、外设需求</a></li>
+                <li><a href="#" class="toc-link sidebar-link">四、功能安全要求</a></li>
+                <li><a href="#" class="toc-link sidebar-link">五、推荐型号</a></li>
+                <li><a href="#" class="toc-link sidebar-link">六、开发工具</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h4 class="sidebar-title">相关文章</h4>
+              <ul class="sidebar-nav">
+                <li><a href="/support/guides/how-to-select-igbt.html" class="sidebar-link">IGBT 选型指南</a></li>
+                <li><a href="/products/mcu/" class="sidebar-link">MCU 产品列表</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bottom">
+        <span>© 2026 力通电子 版权所有</span>
+        <span>QQ: 1145711755</span>
+      </div>
+    </footer>
+  </div>
+  <script src="../../script.js"></script>
+</body>
+</html>

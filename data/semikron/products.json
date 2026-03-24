@@ -1,0 +1,88 @@
+{
+  "brand": "semikron",
+  "brandName": "Semikron 西门康",
+  "categories": {
+    "igbt": {
+      "name": "IGBT",
+      "description": "Semikron 西门康 IGBT 模块，采用先进的芯片技术和创新的封装工艺，适用于工业驱动、新能源、牵引等领域。",
+      "products": [
+        {
+          "model": "SKM300GB12T4",
+          "series": "MiniSKiiP",
+          "parameters": {
+            "voltage": "1200V",
+            "current": "300A",
+            "vce_sat": "1.95V",
+            "package": "MiniSKiiP"
+          },
+          "description": "Semikron MiniSKiiP 系列 IGBT 模块，1200V/300A，采用弹簧接触技术，无焊线设计，可靠性高。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/SKM300GB12T4.pdf",
+          "applications": ["工业变频", "伺服驱动"],
+          "relatedProducts": ["SKM400GB12T4", "SKM200GB12T4"],
+          "faq": []
+        },
+        {
+          "model": "SKM400GB12T4",
+          "series": "MiniSKiiP",
+          "parameters": {
+            "voltage": "1200V",
+            "current": "400A",
+            "vce_sat": "1.85V",
+            "package": "MiniSKiiP"
+          },
+          "description": "Semikron MiniSKiiP 系列 IGBT 模块，1200V/400A，适用于大功率工业驱动应用。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/SKM400GB12T4.pdf",
+          "applications": ["工业变频", "风力发电"],
+          "relatedProducts": ["SKM300GB12T4"],
+          "faq": []
+        }
+      ]
+    },
+    "ipm": {
+      "name": "IPM 智能功率模块",
+      "description": "Semikron IPM 智能功率模块，集成驱动和保护功能，简化系统设计。",
+      "products": [
+        {
+          "model": "SKiiP2314GB123-214VUL",
+          "series": "SKiiP",
+          "parameters": {
+            "voltage": "1200V",
+            "current": "200A",
+            "protection": "短路/过温/欠压",
+            "package": "SKiiP3"
+          },
+          "description": "Semikron SKiiP3 系列 IPM 模块，集成驱动和保护功能，适用于工业变频和伺服驱动。",
+          "stock": "inquiry",
+          "datasheet": "/datasheets/SKiiP2314GB123-214VUL.pdf",
+          "applications": ["工业变频", "伺服驱动"],
+          "relatedProducts": [],
+          "faq": []
+        }
+      ]
+    },
+    "diode": {
+      "name": "二极管",
+      "description": "Semikron 功率二极管，提供高效率和高可靠性。",
+      "products": [
+        {
+          "model": "SKKD160-12",
+          "series": "SKKD",
+          "parameters": {
+            "voltage": "1200V",
+            "current": "160A",
+            "vf": "1.1V",
+            "package": "SEMIPACK"
+          },
+          "description": "Semikron 标准整流二极管，1200V/160A，适用于工业整流应用。",
+          "stock": "in_stock",
+          "datasheet": "/datasheets/SKKD160-12.pdf",
+          "applications": ["整流电源", "UPS"],
+          "relatedProducts": [],
+          "faq": []
+        }
+      ]
+    }
+  }
+}

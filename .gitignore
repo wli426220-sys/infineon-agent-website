@@ -1,0 +1,16 @@
+# 忽略文件
+*.log
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# 编辑器
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 临时文件
+*.bak
+*.orig

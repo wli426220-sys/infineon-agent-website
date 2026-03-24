@@ -1,0 +1,23 @@
+{
+  "brand": "semikron",
+  "categories": {
+    "company": {
+      "name": "公司新闻",
+      "news": []
+    },
+    "industry": {
+      "name": "行业动态",
+      "news": [
+        {
+          "id": "semikron-new-product",
+          "title": "Semikron 发布新一代 IGBT 模块",
+          "date": "2026-03-21",
+          "author": "行业新闻",
+          "tags": ["Semikron", "新产品"],
+          "content": "Semikron 近日发布新一代 IGBT 模块，采用先进的芯片技术和弹簧接触工艺。",
+          "relatedNews": []
+        }
+      ]
+    }
+  }
+}

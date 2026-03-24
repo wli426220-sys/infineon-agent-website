@@ -1,0 +1,325 @@
+/* assets/css/layout.css - 布局样式 */
+@import './variables.css';
+
+/* 页面布局 */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 64px;
+}
+
+/* 容器 */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* 区块 */
+.section {
+  padding: var(--space-20) 0;
+}
+
+.section-alt {
+  background: var(--color-bg-secondary);
+}
+
+/* 内容 + 侧边栏布局中的主内容区 */
+.content-sidebar .main {
+  min-width: 0;
+  flex: 1;
+  display: block;
+  background: var(--color-bg-primary);
+  padding: var(--space-8) 0;
+}
+
+/* 直接使用的 .main 类 */
+.main {
+  display: block;
+}
+
+/* 网格系统 */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 内容 + 侧边栏布局 */
+.content-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-8);
+}
+
+/* 双栏布局 */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+/* 产品详情首屏双栏布局 */
+.product-detail-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  padding: var(--space-10) 0;
+  margin-bottom: var(--space-12);
+}
+
+.product-image-gallery {
+  position: relative;
+}
+
+.product-main-image {
+  width: 100%;
+  height: 400px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+  border: 1px solid var(--color-border);
+}
+
+.product-main-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-thumbnails {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.product-thumbnail {
+  width: 80px;
+  height: 80px;
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.product-thumbnail:hover,
+.product-thumbnail.active {
+  border-color: var(--color-primary);
+}
+
+.product-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.product-model-title {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.product-stock-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.product-description {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.product-cta-group {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.product-cta-extended {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* 轮播组件 */
+.related-products-carousel {
+  margin: var(--space-12) 0;
+}
+
+.carousel-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--space-6);
+  transition: transform 0.3s ease;
+}
+
+.carousel-card {
+  flex: 0 0 calc(25% - 18px);
+  min-width: 200px;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  z-index: 1;
+}
+
+.carousel-nav:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.carousel-nav.prev {
+  left: 12px;
+}
+
+.carousel-nav.next {
+  right: 12px;
+}
+
+/* 文章正文容器 */
+.article-content {
+  max-width: 800px;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-primary);
+}
+
+.article-content h2 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: var(--space-12) 0 var(--space-6);
+  padding-left: var(--space-4);
+  border-left: 4px solid var(--color-primary);
+}
+
+.article-content h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: var(--space-8) 0 var(--space-4);
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--color-primary);
+}
+
+.article-content p {
+  margin-bottom: var(--space-6);
+  text-align: justify;
+}
+
+.article-content pre {
+  background: var(--color-bg-tertiary);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: var(--space-6) 0;
+  border: 1px solid var(--color-border);
+}
+
+.article-content code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+.article-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.article-content p code {
+  background: var(--color-bg-tertiary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.article-content blockquote {
+  margin: var(--space-6) 0;
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-bg-secondary);
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.article-content blockquote p {
+  margin: 0;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: var(--space-6) 0;
+  padding-left: var(--space-6);
+}
+
+.article-content li {
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-relaxed);
+}
+
+.article-content figure {
+  margin: var(--space-8) 0;
+}
+
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.article-content figcaption {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-3);
+}
